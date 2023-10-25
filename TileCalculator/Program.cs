@@ -6,7 +6,7 @@
 //average flooring team can only put in 20 square feet of flooring per hour at a cost of $86.00/hr.
 //Pick ONE ADDITIONAL SHAPE (triangle / circle / etc) and implement the second shape,
 //making the user select wich one they want to calculate
-//onsole.WriteLine("{0} this is an {1} is your name? {2}", aString, panela, large);
+
 
 namespace TileCa1culator
 {
@@ -14,21 +14,19 @@ namespace TileCa1culator
     {
         static void Main(string[] args)
         {
-            string width;
-            string length;
-            string costPerUnit;
+        
 
             Console.WriteLine("Enter the width: \n");
             //take user input of width
-            width = Console.ReadLine();
+            string width = Console.ReadLine();
 
             Console.WriteLine("\nEnter the length: \n");
             //take user input of length
-            length = Console.ReadLine();
+            string length = Console.ReadLine();
 
             Console.WriteLine("\nEnter the cost per 1 unit of flooring: \n");
             //take user input of costPerUnit
-            costPerUnit = Console.ReadLine();
+            string costPerUnit = Console.ReadLine();
 
             //convert string to float
 
