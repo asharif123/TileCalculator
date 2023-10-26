@@ -19,14 +19,14 @@ namespace TileCa1culator
 
             //ask user for the shape
 
-            Console.WriteLine("Type R for Rectangle flooring or T for Triangle flooring:");
+            Console.WriteLine("Type R for Rectangle flooring or T for Triangle flooring:\n");
 
             string shape = Console.ReadLine().ToUpper();
 
             //if user selects Rectangular tiles
             if (shape == "R")
             {
-                Console.WriteLine("Enter the width: \n");
+                Console.WriteLine("\nEnter the width: \n");
                 //take user input of width
                 string rectangleWidth = Console.ReadLine();
 
@@ -66,7 +66,7 @@ namespace TileCa1culator
                 //if user selects Triangle tiles
             else if (shape == "T")
             {
-                Console.WriteLine("Enter the width: \n");
+                Console.WriteLine("\nEnter the width: \n");
                 //take user input of length
                 string triangleLength = Console.ReadLine();
 
@@ -80,14 +80,14 @@ namespace TileCa1culator
 
                 //convert string to float
 
-                float triangleWidthVal = float.Parse(triangleLength);
+                float triangleLengthVal = float.Parse(triangleLength);
                 float triangleHeightVal = float.Parse(triangleHeight);
 
                 //convert str to float
                 float triangleCostPerUnitVal = float.Parse(triangleCostPerUnit);
 
-
-                float triangleTileTotal = (triangleWidthVal * triangleHeightVal * triangleCostPerUnitVal)/2;
+                //total area of triangle is 1/2*length*height
+                float triangleTileTotal = (triangleLengthVal * triangleHeightVal * triangleCostPerUnitVal)/2;
 
                 float triangleHandyManCost = 20 * 86;
 
