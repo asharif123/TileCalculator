@@ -23,44 +23,50 @@ namespace TileCa1culator
 
             string shape = Console.ReadLine().ToUpper();
 
+            //define handyman cost for all shapes
+
+            const float handyManCost = 86 * 20;
+
+            Console.WriteLine("\nEnter the width: \n");
+            //take user input of width regardless of shape
+            string width = Console.ReadLine();
+
+
+
+            Console.WriteLine("\nEnter the length: \n");
+            //take user input of length regardless of shape
+            string length = Console.ReadLine();
+
+
+            Console.WriteLine("\nEnter the cost per 1 unit of flooring: \n");
+            //take user input of costPerUnit
+            string costPerUnit = Console.ReadLine();
+
+            //convert string to float
+
+            float widthVal = float.Parse(width);
+            float lengthVal = float.Parse(length);
+
+            //convert str to float
+            float costPerUnitVal = float.Parse(costPerUnit);
+
             //if user selects Rectangular tiles
             if (shape == "R")
             {
-                Console.WriteLine("\nEnter the width: \n");
-                //take user input of width
-                string rectangleWidth = Console.ReadLine();
-
-                Console.WriteLine("\nEnter the length: \n");
-                //take user input of length
-                string rectangleLength = Console.ReadLine();
-
-                Console.WriteLine("\nEnter the cost per 1 unit of flooring: \n");
-                //take user input of costPerUnit
-                string rectangleCostPerUnit = Console.ReadLine();
-
-                //convert string to float
-
-                float rectangleWidthVal = float.Parse(rectangleWidth);
-                float rectangleLengthVal = float.Parse(rectangleLength);
-
-                //convert str to float
-                float rectangleCostPerUnitVal = float.Parse(rectangleCostPerUnit);
 
                 //rectangle area
-                float rectangleArea = rectangleWidthVal * rectangleLengthVal;
+                float rectangleArea = widthVal * lengthVal;
 
 
-                float rectangleTileTotal = rectangleArea * rectangleCostPerUnitVal;
+                float rectangleTileTotal = rectangleArea * costPerUnitVal;
 
-                const float rectangleHandyManCost = 20 * 86;
-
-                float rectangleTotalCost = rectangleTileTotal + rectangleHandyManCost;
+                float rectangleTotalCost = rectangleTileTotal + handyManCost;
 
                 //compute the tile cost, round to 2 digits
                 Console.WriteLine("\nThe cost of the tiles is is ${0}.", Math.Round(rectangleTileTotal, 2));
 
                 //compute the handy man cost, round to 2 digits
-                Console.WriteLine("\nThe cost of handy man labor is ${0}.", Math.Round(rectangleHandyManCost, 2));
+                Console.WriteLine("\nThe cost of handy man labor is ${0}.", Math.Round(handyManCost, 2));
 
                 //the total cost
                 Console.WriteLine("\nThe total cost is is ${0}.", Math.Round(rectangleTotalCost, 2));
@@ -69,39 +75,18 @@ namespace TileCa1culator
                 //if user selects Triangle tiles
             else if (shape == "T")
             {
-                Console.WriteLine("\nEnter the width: \n");
-                //take user input of length
-                string triangleLength = Console.ReadLine();
-
-                Console.WriteLine("\nEnter the height: \n");
-                //take user input of height
-                string triangleHeight = Console.ReadLine();
-
-                Console.WriteLine("\nEnter the cost per 1 unit of flooring: \n");
-                //take user input of costPerUnit
-                string triangleCostPerUnit = Console.ReadLine();
-
-                //convert string to float
-
-                float triangleLengthVal = float.Parse(triangleLength);
-                float triangleHeightVal = float.Parse(triangleHeight);
-
-                //convert str to float
-                float triangleCostPerUnitVal = float.Parse(triangleCostPerUnit);
 
                 //total area of triangle is 1/2*length*height
-                float triangleArea = (triangleLengthVal * triangleHeightVal) / 2;
-                float triangleTileTotal = triangleArea * triangleCostPerUnitVal;
+                float triangleArea = (lengthVal * widthVal) / 2;
+                float triangleTileTotal = triangleArea * costPerUnitVal;
 
-                const float triangleHandyManCost = 20 * 86;
-
-                float triangleTotalCost = triangleTileTotal + triangleHandyManCost;
+                float triangleTotalCost = triangleTileTotal + handyManCost;
 
                 //compute the tile cost, round to 2 digits
                 Console.WriteLine("\nThe cost of the tiles is is ${0}.", Math.Round(triangleTileTotal, 2));
 
                 //compute the handy man cost, round to 2 digits
-                Console.WriteLine("\nThe cost of handy man labor is ${0}.", Math.Round(triangleHandyManCost, 2));
+                Console.WriteLine("\nThe cost of handy man labor is ${0}.", Math.Round(handyManCost, 2));
 
                 //the total cost
                 Console.WriteLine("\nThe total cost is is ${0}.", Math.Round(triangleTotalCost, 2));
