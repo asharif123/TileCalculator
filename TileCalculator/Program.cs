@@ -46,8 +46,11 @@ namespace TileCa1culator
                 //convert str to float
                 float rectangleCostPerUnitVal = float.Parse(rectangleCostPerUnit);
 
+                //rectangle area
+                float rectangleArea = rectangleWidthVal * rectangleLengthVal;
 
-                float rectangleTileTotal = rectangleWidthVal * rectangleLengthVal * rectangleCostPerUnitVal;
+
+                float rectangleTileTotal = rectangleArea * rectangleCostPerUnitVal;
 
                 const float rectangleHandyManCost = 20 * 86;
 
@@ -87,7 +90,8 @@ namespace TileCa1culator
                 float triangleCostPerUnitVal = float.Parse(triangleCostPerUnit);
 
                 //total area of triangle is 1/2*length*height
-                float triangleTileTotal = (triangleLengthVal * triangleHeightVal * triangleCostPerUnitVal)/2;
+                float triangleArea = (triangleLengthVal * triangleHeightVal) / 2;
+                float triangleTileTotal = triangleArea * triangleCostPerUnitVal;
 
                 const float triangleHandyManCost = 20 * 86;
 
