@@ -49,7 +49,7 @@ namespace TileCa1culator
 
                 float rectangleTileTotal = rectangleWidthVal * rectangleLengthVal * rectangleCostPerUnitVal;
 
-                float rectangleHandyManCost = 20 * 86;
+                const float rectangleHandyManCost = 20 * 86;
 
                 float rectangleTotalCost = rectangleTileTotal + rectangleHandyManCost;
 
@@ -89,7 +89,7 @@ namespace TileCa1culator
                 //total area of triangle is 1/2*length*height
                 float triangleTileTotal = (triangleLengthVal * triangleHeightVal * triangleCostPerUnitVal)/2;
 
-                float triangleHandyManCost = 20 * 86;
+                const float triangleHandyManCost = 20 * 86;
 
                 float triangleTotalCost = triangleTileTotal + triangleHandyManCost;
 
