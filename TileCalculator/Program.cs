@@ -54,20 +54,20 @@ namespace TileCa1culator
             //convert str to float
             float costPerUnitVal = float.Parse(costPerUnit);
 
+            //area formula
+            float area = widthVal * lengthVal;
+
+            //calculate the title total cost
+            float tileTotal = area * costPerUnitVal;
+
             //if user selects Rectangular tiles
             if (shape == "R")
             {
 
-                //rectangle area
-                float rectangleArea = widthVal * lengthVal;
-
-
-                float rectangleTileTotal = rectangleArea * costPerUnitVal;
-
-                float rectangleTotalCost = rectangleTileTotal + (FLOORING_SQUARE_FEET * FLOORING_PER_HOUR);
+                float rectangleTotalCost = tileTotal + (FLOORING_SQUARE_FEET * FLOORING_PER_HOUR);
 
                 //compute the tile cost, round to 2 digits
-                Console.WriteLine("\nThe cost of the tiles is is ${0}.", Math.Round(rectangleTileTotal, 2));
+                Console.WriteLine("\nThe cost of the tiles is is ${0}.", Math.Round(tileTotal, 2));
 
                 //compute the handy man cost, round to 2 digits
                 Console.WriteLine("\nThe cost of handy man labor is ${0}.", Math.Round((FLOORING_SQUARE_FEET * FLOORING_PER_HOUR), 2));
@@ -80,14 +80,13 @@ namespace TileCa1culator
             else if (shape == "T")
             {
 
-                //total area of triangle is 1/2*length*height
-                float triangleArea = (lengthVal * widthVal) / 2;
-                float triangleTileTotal = triangleArea * costPerUnitVal;
+                //tileTotal for triangle is divided by 2 since the area of the triangle is 1/2*l*w so
+                //1/2 is divided to tileTotal to consider area of triangle
 
-                float triangleTotalCost = triangleTileTotal + (FLOORING_SQUARE_FEET * FLOORING_PER_HOUR);
+                float triangleTotalCost = tileTotal / 2 + (FLOORING_SQUARE_FEET * FLOORING_PER_HOUR);
 
                 //compute the tile cost, round to 2 digits
-                Console.WriteLine("\nThe cost of the tiles is is ${0}.", Math.Round(triangleTileTotal, 2));
+                Console.WriteLine("\nThe cost of the tiles is is ${0}.", Math.Round(tileTotal / 2, 2));
 
                 //compute the handy man cost, round to 2 digits
                 Console.WriteLine("\nThe cost of handy man labor is ${0}.", Math.Round((FLOORING_SQUARE_FEET * FLOORING_PER_HOUR), 2));
