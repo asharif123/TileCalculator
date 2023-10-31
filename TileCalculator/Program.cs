@@ -36,7 +36,6 @@ namespace TileCa1culator
             float area = 0;
 
             //ask user for the shape
-
             Console.WriteLine("\nType R for Rectangle flooring or T for Triangle flooring:\n");
 
             string shape = Console.ReadLine().ToUpper();
@@ -93,7 +92,6 @@ namespace TileCa1culator
             //Perform calculations regardless of what shape is selected
 
             //total costs of tiles
-            Console.WriteLine(area);
             float tileTotal = area*costPerUnitVal;
 
             //total cost of handyMan labor
