@@ -25,83 +25,91 @@ namespace TileCa1culator
             //constant for defining flooring per hour
             const float FLOORING_PER_HOUR = 85;
 
-            //ask user for the shape
-
-            Console.WriteLine("Type R for Rectangle flooring or T for Triangle flooring:\n");
-
-            string shape = Console.ReadLine().ToUpper();
-
-            Console.WriteLine("\nEnter the width: \n");
-            //take user input of width regardless of shape
-            string width = Console.ReadLine();
-
-
-
-            Console.WriteLine("\nEnter the length: \n");
-            //take user input of length regardless of shape
-            string length = Console.ReadLine();
-
-
-            Console.WriteLine("\nEnter the cost per 1 unit of flooring: \n");
             //take user input of costPerUnit
+            Console.WriteLine("\nEnter the cost per 1 unit of flooring: \n");
             string costPerUnit = Console.ReadLine();
-
-            //convert string to float
-
-            float widthVal = float.Parse(width);
-            float lengthVal = float.Parse(length);
 
             //convert str to float
             float costPerUnitVal = float.Parse(costPerUnit);
 
-            //area formula
-            float area = widthVal * lengthVal;
+            //define area for rectangle and triangle
+            float area = 0;
 
-            //calculate the title total cost
-            float tileTotal = area * costPerUnitVal;
+            //ask user for the shape
+
+            Console.WriteLine("\nType R for Rectangle flooring or T for Triangle flooring:\n");
+
+            string shape = Console.ReadLine().ToUpper();
 
             //if user selects Rectangular tiles
             if (shape == "R")
             {
+                //if user selected rectangle, enter width and length
+                Console.WriteLine("\nEnter the width: \n");
+                string width = Console.ReadLine();
 
-                float rectangleTotalCost = tileTotal + (FLOORING_SQUARE_FEET * FLOORING_PER_HOUR);
+                Console.WriteLine("\nEnter the length: \n");
+                //take user input of length regardless of shape
+                string length = Console.ReadLine();
 
-                //compute the tile cost, round to 2 digits
-                Console.WriteLine("\nThe cost of the tiles is is ${0}.", Math.Round(tileTotal, 2));
+                //convert string to float
+                float rectangleWidth = float.Parse(width);
 
-                //compute the handy man cost, round to 2 digits
-                Console.WriteLine("\nThe cost of handy man labor is ${0}.", Math.Round((FLOORING_SQUARE_FEET * FLOORING_PER_HOUR), 2));
+                float rectangleLength = float.Parse(length);
 
-                //the total cost
-                Console.WriteLine("\nThe total cost is is ${0}.", Math.Round(rectangleTotalCost, 2));
+                //calculate the area of the rectangle
+
+                area = rectangleWidth * rectangleLength;
             }
 
-                //if user selects Triangle tiles
+            //if user selects Triangle tiles
             else if (shape == "T")
             {
+                //if user selected triangle, enter the base and height dimensions
 
-                //tileTotal for triangle is divided by 2 since the area of the triangle is 1/2*l*w so
-                //1/2 is divided to tileTotal to consider area of triangle
+                Console.WriteLine("Enter the triangle's base dimension");
+                string baseOfTriangle = Console.ReadLine();
 
-                float triangleTotalCost = tileTotal / 2 + (FLOORING_SQUARE_FEET * FLOORING_PER_HOUR);
+                Console.WriteLine("Enter the triangle's height dimension");
+                string heightOfTriangle = Console.ReadLine();
+               
+                //convert str into float
+                float baseVal = float.Parse(baseOfTriangle);
 
-                //compute the tile cost, round to 2 digits
-                Console.WriteLine("\nThe cost of the tiles is is ${0}.", Math.Round(tileTotal / 2, 2));
+                float heightVal = float.Parse(heightOfTriangle);
 
-                //compute the handy man cost, round to 2 digits
-                Console.WriteLine("\nThe cost of handy man labor is ${0}.", Math.Round((FLOORING_SQUARE_FEET * FLOORING_PER_HOUR), 2));
-
-                //the total cost
-                Console.WriteLine("\nThe total cost is is ${0}.", Math.Round(triangleTotalCost, 2));
-
+                //calculate the area of the triangle
+                area = (baseVal * heightVal) / 2;
 
             }
+            
             //if user does not enter either Triangle or Rectangle
 
             else
             {
                 Console.WriteLine("\nInvalid input!\n");
             }
+
+            //Perform calculations regardless of what shape is selected
+
+            //total costs of tiles
+            Console.WriteLine(area);
+            float tileTotal = area*costPerUnitVal;
+
+            //total cost of handyMan labor
+            float handyManLabor = FLOORING_PER_HOUR * FLOORING_SQUARE_FEET;
+
+            //get the overall total cost
+            float totalCost = tileTotal + handyManLabor;
+
+            //compute the tile cost, round to 2 digits
+            Console.WriteLine("\nThe cost of the tiles is is ${0}.", Math.Round(tileTotal / 2, 2));
+
+            //compute the handy man cost, round to 2 digits
+            Console.WriteLine("\nThe cost of handy man labor is ${0}.", Math.Round((handyManLabor), 2));
+
+            //the total cost
+            Console.WriteLine("\nThe total cost is is ${0}.", Math.Round(totalCost, 2));
 
         }
     }
