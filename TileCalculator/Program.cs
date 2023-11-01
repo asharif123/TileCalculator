@@ -24,13 +24,6 @@ namespace TileCa1culator
             //constant for defining flooring per hour
             const float FLOORING_PER_HOUR = 85.0F;
 
-            //take user input of costPerUnit
-            Console.WriteLine("\nEnter the cost per 1 unit of flooring: \n");
-            string costPerUnit = Console.ReadLine();
-
-            //convert str to float
-            float costPerUnitVal = float.Parse(costPerUnit);
-
             //define area for rectangle and triangle
             float area = 0;
 
@@ -90,6 +83,13 @@ namespace TileCa1culator
             }
 
             //Perform calculations regardless of what shape is selected
+
+            //take user input of costPerUnit
+            Console.WriteLine("\nEnter the cost per 1 unit of flooring: \n");
+            string costPerUnit = Console.ReadLine();
+
+            //convert str to float
+            float costPerUnitVal = float.Parse(costPerUnit);
 
             //total costs of tiles
             float tileTotal = area*costPerUnitVal;
