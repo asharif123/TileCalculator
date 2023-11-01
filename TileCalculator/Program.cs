@@ -20,10 +20,10 @@ namespace TileCa1culator
             //defining constants at the beginning of the main function
 
             //constant for defining how much flooring can be put in
-            const float FLOORING_SQUARE_FEET = 20;
+            const float FLOORING_SQUARE_FEET = 20.0F;
 
             //constant for defining flooring per hour
-            const float FLOORING_PER_HOUR = 85;
+            const float FLOORING_PER_HOUR = 85.0F;
 
             //take user input of costPerUnit
             Console.WriteLine("\nEnter the cost per 1 unit of flooring: \n");
@@ -101,7 +101,7 @@ namespace TileCa1culator
             float totalCost = tileTotal + handyManLabor;
 
             //compute the tile cost, round to 2 digits
-            Console.WriteLine("\nThe cost of the tiles is is ${0}.", Math.Round(tileTotal / 2, 2));
+            Console.WriteLine("\nThe cost of the tiles is is ${0}.", Math.Round(tileTotal, 2));
 
             //compute the handy man cost, round to 2 digits
             Console.WriteLine("\nThe cost of handy man labor is ${0}.", Math.Round((handyManLabor), 2));
