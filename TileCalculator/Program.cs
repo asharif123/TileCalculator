@@ -93,17 +93,17 @@ namespace TileCa1culator
             //total costs of tiles
             float tileTotal = area*costPerUnitVal;
 
-            //total cost of handyMan labor
-            float handyManLabor = FLOORING_PER_HOUR * FLOORING_SQUARE_FEET;
-
-            //get the overall total cost
-            float totalCost = tileTotal + handyManLabor;
-
             //compute the tile cost, round to 2 digits
             Console.WriteLine("\nThe cost of the tiles is is ${0}.", Math.Round(tileTotal, 2));
 
+            //total cost of handyMan labor
+            float handyManLabor = (area / FLOORING_SQUARE_FEET) * FLOORING_PER_HOUR;
+
             //compute the handy man cost, round to 2 digits
             Console.WriteLine("\nThe cost of handy man labor is ${0}.", Math.Round((handyManLabor), 2));
+
+            //get the overall total cost
+            float totalCost = tileTotal + handyManLabor;
 
             //the total cost
             Console.WriteLine("\nThe total cost is is ${0}.", Math.Round(totalCost, 2));
