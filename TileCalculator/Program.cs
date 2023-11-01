@@ -86,6 +86,7 @@ namespace TileCa1culator
             else
             {
                 Console.WriteLine("\nInvalid input!\n");
+                return;
             }
 
             //Perform calculations regardless of what shape is selected
