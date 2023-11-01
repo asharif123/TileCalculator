@@ -8,7 +8,6 @@
 //making the user select wich one they want to calculate
 
 
-using System.ComponentModel.Design;
 
 namespace TileCa1culator
 {
