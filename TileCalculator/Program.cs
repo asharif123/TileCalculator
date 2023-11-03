@@ -37,46 +37,28 @@ namespace TileCa1culator
             {
                 //if user selected rectangle, enter width and length
                 Console.WriteLine("\nEnter the width: \n");
-                string width = Console.ReadLine();
+                float rectangleWidth = float.Parse(Console.ReadLine());
 
                 Console.WriteLine("\nEnter the length: \n");
-                //take user input of length regardless of shape
-                string length = Console.ReadLine();
-
-                //convert string to float
-                float rectangleWidth = float.Parse(width);
-
-                float rectangleLength = float.Parse(length);
+                float rectangleLength = float.Parse(Console.ReadLine());
 
                 //calculate the area of the rectangle
-
                 area = rectangleWidth * rectangleLength;
             }
-
-            //if user selects Triangle tiles
-            else if (shape == "T")
+            else if (shape == "T")  //if user selects Triangle tiles
             {
                 //if user selected triangle, enter the base and height dimensions
-
                 Console.WriteLine("Enter the triangle's base dimension");
-                string baseOfTriangle = Console.ReadLine();
+                float baseVal = float.Parse(Console.ReadLine());
 
                 Console.WriteLine("Enter the triangle's height dimension");
-                string heightOfTriangle = Console.ReadLine();
-               
-                //convert str into float
-                float baseVal = float.Parse(baseOfTriangle);
-
-                float heightVal = float.Parse(heightOfTriangle);
+                float heightVal = float.Parse(Console.ReadLine());
 
                 //calculate the area of the triangle
                 area = (baseVal * heightVal) / 2;
 
             }
-            
-            //if user does not enter either Triangle or Rectangle
-
-            else
+            else  //if user does not enter either Triangle or Rectangle
             {
                 Console.WriteLine("\nInvalid input!\n");
                 return;
