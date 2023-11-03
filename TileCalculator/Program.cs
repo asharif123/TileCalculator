@@ -32,8 +32,7 @@ namespace TileCa1culator
 
             string shape = Console.ReadLine().ToUpper();
 
-            //if user selects Rectangular tiles
-            if (shape == "R")
+            if (shape == "R")  //if user selects Rectangular tiles
             {
                 //if user selected rectangle, enter width and length
                 Console.WriteLine("\nEnter the width: \n");
